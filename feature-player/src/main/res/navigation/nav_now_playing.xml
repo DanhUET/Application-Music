@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_now_playing">
+    <!--    <include app:graph="@navigation/nav_artist_detail" />-->
+    <!--    <include app:graph="@navigation/nav_song_option_menu" />-->
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/nowPlayingFragment"-->
+    <!--        android:name="pro.branium.feature.player.ui.fragment.NowPlayingFragment"-->
+    <!--        android:label="fragment_now_playing"-->
+    <!--        tools:layout="@layout/fragment_now_playing" />-->
+
+    <!--    <action-->
+    <!--        android:id="@+id/action_global_fr_artist_detail"-->
+    <!--        app:destination="@id/nav_artist_detail"-->
+    <!--        app:enterAnim="@anim/slide_left"-->
+    <!--        app:exitAnim="@anim/fade_out"-->
+    <!--        app:popEnterAnim="@anim/fade_in"-->
+    <!--        app:popExitAnim="@anim/slide_right" />-->
+</navigation>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pro.branium.core_ui.layout.MaxHeightConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:maxHeight="@dimen/list_item_max_height">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/layout_more_for_you"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseCompoundDrawables">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_48"
+            android:layout_marginStart="@dimen/margin_16"
+            android:gravity="center_vertical"
+            android:text="@string/title_for_you"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="@dimen/width_20"
+            android:layout_height="@dimen/height_48"
+            android:layout_marginStart="@dimen/margin_4"
+            android:contentDescription="@string/image_button_description"
+            android:src="@drawable/ic_arrow_forward_ios" />
+    </LinearLayout>
+
+    <!-- Song list -->
+    <include
+        android:id="@+id/include_for_you_song"
+        layout="@layout/partial_song_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_more_for_you" />
+
+    <!-- Empty -->
+    <LinearLayout
+        android:id="@+id/for_you_empty_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_more_for_you"
+        tools:visibility="visible" />
+
+</pro.branium.core_ui.layout.MaxHeightConstraintLayout>

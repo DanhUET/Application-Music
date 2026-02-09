@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="message_no_artist_info">Không có thông tin về nghệ sĩ</string>
+    <string name="no_artist">Không có nghệ sĩ nào</string>
+</resources>

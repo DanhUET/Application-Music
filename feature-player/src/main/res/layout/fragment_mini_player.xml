@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="displaySong"
+            type="pro.branium.core_ui.model.DisplaySongModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mini_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_4"
+        app:cardCornerRadius="@dimen/card_corner_radius_16"
+        app:cardElevation="@dimen/cardview_normal_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mini_player_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/MiniPlayerTheme"
+            tools:context=".presentation.ui.fragments.miniplayer.MiniPlayerFragment">
+
+            <ImageButton
+                android:id="@+id/btn_mini_player_skip_next"
+                android:layout_width="@dimen/button_width_48"
+                android:layout_height="@dimen/button_height_48"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/image_button_description"
+                android:src="@drawable/ic_skip_next"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_mini_player_play_pause"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_mini_player_play_pause"
+                tools:ignore="RedundantDescriptionCheck" />
+
+            <ImageButton
+                android:id="@+id/btn_mini_player_play_pause"
+                android:layout_width="@dimen/button_width_48"
+                android:layout_height="@dimen/button_height_48"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/image_button_description"
+                android:src="@drawable/ic_play_circle"
+                app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                app:layout_constraintEnd_toStartOf="@+id/btn_mini_player_skip_next"
+                app:layout_constraintTop_toTopOf="@+id/guideline4"
+                tools:ignore="RedundantDescriptionCheck" />
+
+            <ImageButton
+                android:id="@+id/btn_mini_player_favorite"
+                android:layout_width="@dimen/button_width_48"
+                android:layout_height="@dimen/button_height_48"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/image_button_description"
+                android:src="@drawable/ic_favorite"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_mini_player_play_pause"
+                app:layout_constraintEnd_toStartOf="@+id/btn_mini_player_play_pause"
+                app:layout_constraintTop_toTopOf="@+id/btn_mini_player_play_pause"
+                tools:ignore="DuplicateSpeakableTextCheck,RedundantDescriptionCheck" />
+
+            <ImageView
+                android:id="@+id/image_mini_player_artwork"
+                android:layout_width="@dimen/artwork_width"
+                android:layout_height="@dimen/artwork_height"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:contentDescription="@string/image_desc"
+                app:imageUrl="@{displaySong.song.artworkUrl}"
+                app:isCircleCrop="@{true}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck"
+                tools:src="@tools:sample/avatars" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/text_mini_player_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_marginBottom="2dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{displaySong.song.title}"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="?attr/colorOnBackground"
+                app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                app:layout_constraintEnd_toStartOf="@+id/btn_mini_player_favorite"
+                app:layout_constraintStart_toEndOf="@+id/image_mini_player_artwork" />
+
+            <TextView
+                android:id="@+id/text_mini_player_artist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{displaySong.song.artist}"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:textColor="?attr/colorOnBackground"
+                app:layout_constraintEnd_toEndOf="@+id/text_mini_player_title"
+                app:layout_constraintStart_toStartOf="@+id/text_mini_player_title"
+                app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+            <ProgressBar
+                android:id="@+id/pb_mini"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/guideline4"
+                app:layout_constraintEnd_toStartOf="@+id/btn_mini_player_skip_next"
+                app:layout_constraintStart_toStartOf="@+id/btn_mini_player_play_pause"
+                app:layout_constraintTop_toTopOf="@+id/guideline4"
+                tools:visibility="visible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

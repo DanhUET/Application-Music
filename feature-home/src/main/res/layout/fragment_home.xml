@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="pro.branium.feature.home.ui.HomeFragment">
+
+        <TextView
+            android:id="@+id/text_title_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/title_home"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_speech_to_search"
+            android:layout_width="@dimen/button_width_48"
+            android:layout_height="@dimen/button_height_48"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/btn_speech_to_search_desc"
+            android:scaleType="center"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_search_home"
+            app:layout_constraintEnd_toStartOf="@+id/btn_search_home"
+            app:layout_constraintTop_toTopOf="@+id/btn_search_home"
+            app:srcCompat="@drawable/ic_mic" />
+
+        <ImageButton
+            android:id="@+id/btn_search_home"
+            android:layout_width="@dimen/button_width_48"
+            android:layout_height="@dimen/button_height_48"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/search_home_description"
+            android:scaleType="center"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="@+id/text_title_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/text_title_home"
+            tools:ignore="SpeakableTextPresentCheck,RedundantDescriptionCheck" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_album_hot"
+            android:name="pro.branium.feature_album.ui.fragment.AlbumHotFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_title_home"
+            tools:layout="@layout/fragment_album_hot" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_recommended"
+            android:name="pro.branium.feature_recommended.ui.fragment.RecommendedFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_32"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fcv_album_hot"
+            tools:layout="@layout/fragment_recommended" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_album"
+    app:startDestination="@id/fr_album_detail">
+    <fragment
+        android:id="@+id/fr_album_detail"
+        android:name="pro.branium.feature_album.ui.fragment.AlbumDetailsFragment"
+        android:label="@string/label_album_detail_fragment" >
+        <argument
+            android:name="albumId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>

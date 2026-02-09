@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_discovery"
+    app:startDestination="@id/navigation_discovery">
+
+    <include app:graph="@navigation/nav_artist" />
+
+    <fragment
+        android:id="@+id/navigation_discovery"
+        android:name="pro.branium.discovery.ui.fragment.DiscoveryFragment"
+        android:label="@string/title_discovery"
+        app:launchSingleTop="true"
+        tools:layout="@layout/fragment_discovery">
+        <action
+            android:id="@+id/action_fr_discovery_to_moreArtist"
+            app:destination="@id/moreArtistFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToSaveState="true"
+            app:popUpTo="@id/navigation_discovery" />
+        <action
+            android:id="@+id/action_fr_discovery_to_moreForYou"
+            app:destination="@id/moreForYouFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToSaveState="true"
+            app:popUpTo="@id/navigation_discovery" />
+        <action
+            android:id="@+id/action_fr_discovery_to_moreMostHeard"
+            app:destination="@id/moreMostHeardFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToSaveState="true"
+            app:popUpTo="@id/navigation_discovery" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moreArtistFragment"
+        android:name="pro.branium.feature_artist.ui.fragment.MoreArtistFragment"
+        android:label="fragment_more_artist"
+        tools:layout="@layout/fragment_more_artist" />
+
+    <fragment
+        android:id="@+id/moreForYouFragment"
+        android:name="pro.branium.feature_foryou.ui.fragment.MoreForYouFragment"
+        android:label="MoreForYouFragment" />
+
+    <fragment
+        android:id="@+id/moreMostHeardFragment"
+        android:name="pro.branium.feature_mostheard.ui.fragment.MoreMostHeardFragment"
+        android:label="MoreMostHeardFragment" />
+</navigation>

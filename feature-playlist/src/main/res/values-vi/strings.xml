@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_edit_playlist">Đổi tên danh sách phát</string>
+    <string name="action_save">Lưu lại</string>
+    <string name="message_confirm_update_playlist">Bạn có chắc chắn muốn lưu danh sách phát với tên mới?</string>
+    <string name="message_function_implementing">Tính năng này đang trong quá trình phát triển</string>
+    <string name="message_no_playlist">Bạn không có danh sách nào</string>
+    <string name="message_confirm_delete_playlist">Bạn chắc chắn muốn xóa bỏ danh sách phát: %s?</string>
+    <string name="error_playlist_exists">Tên danh sách phát này đã được sử dụng</string>
+    <string name="add_to_playlist_success">Bài hát đã được thêm vào danh sách phát \"%s\"</string>
+    <string name="add_to_playlist_failed">Bài hát này đã tồn tại trong danh sách phát bạn chọn</string>
+    <string name="title_playlist_detail">Chi tiết danh sách phát</string>
+    <string name="text_number_of_songs">Số lượng bài hát: %d</string>
+    <string name="text_playlist_name_detail">Tên Playlist: %s</string>
+</resources>

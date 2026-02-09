@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/navigation_home">
+
+    <include app:graph="@navigation/nav_album" />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="pro.branium.feature.home.ui.fragments.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_fragment_home_to_fragment_more_recommended"
+            app:destination="@id/fragment_more_recommended"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/navigation_home" />
+        <action
+            android:id="@+id/action_fragment_home_to_fragment_more_album"
+            app:destination="@id/fr_more_album"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_home_to_fr_album_detail"
+            app:destination="@id/fr_album_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_more_recommended"
+        android:name="pro.branium.feature_recommended.ui.fragment.MoreRecommendedFragment"
+        android:label="@string/label_fragment_more_recommended"
+        tools:layout="@layout/fragment_more_recommended" />
+
+    <fragment
+        android:id="@+id/fr_more_album"
+        android:name="pro.branium.feature_album.ui.fragment.MoreAlbumFragment"
+        android:label="@string/label_more_album_fragment"
+        tools:layout="@layout/fragment_more_album" />
+</navigation>

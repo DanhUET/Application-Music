@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pro.branium.discovery.ui.fragment.DiscoveryFragment">
+
+    <!-- Header: Search + Mic -->
+    <LinearLayout
+        android:id="@+id/layout_discovery_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!-- Title -->
+        <TextView
+            android:id="@+id/text_title_discovery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_weight="1"
+            android:text="@string/title_discovery"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_discovery_header" />
+
+        <ImageButton
+            android:id="@+id/btn_speech_to_search"
+            android:layout_width="@dimen/button_width_48"
+            android:layout_height="@dimen/button_height_48"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/btn_speech_to_search_desc"
+            app:srcCompat="@drawable/ic_mic" />
+
+        <ImageButton
+            android:id="@+id/btn_search_discovery"
+            android:layout_width="@dimen/button_width_48"
+            android:layout_height="@dimen/button_height_48"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/image_button_description"
+            android:src="@drawable/ic_search" />
+    </LinearLayout>
+
+    <!-- RecyclerView thay cho ScrollView + FragmentContainerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_discovery"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/margin_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_discovery_header"
+        tools:listitem="@layout/item_discovery_for_you" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:id="@+id/scroll_view_discovery"-->
+    <!--    android:saveEnabled="true"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:orientation="vertical">-->
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        tools:context=".ui.discovery.DiscoveryFragment">-->
+
+    <!--        <ImageButton-->
+    <!--            android:id="@+id/btn_speech_to_search"-->
+    <!--            android:layout_width="@dimen/button_width_48"-->
+    <!--            android:layout_height="@dimen/button_height_48"-->
+    <!--            android:layout_marginEnd="@dimen/margin_8"-->
+    <!--            android:background="?attr/selectableItemBackgroundBorderless"-->
+    <!--            android:contentDescription="@string/btn_speech_to_search_desc"-->
+    <!--            android:scaleType="center"-->
+    <!--            app:layout_constraintBottom_toBottomOf="@+id/btn_search_discovery"-->
+    <!--            app:layout_constraintEnd_toStartOf="@+id/btn_search_discovery"-->
+    <!--            app:layout_constraintTop_toTopOf="@+id/btn_search_discovery"-->
+    <!--            app:srcCompat="@drawable/ic_mic" />-->
+
+    <!--        <ImageButton-->
+    <!--            android:id="@+id/btn_search_discovery"-->
+    <!--            android:layout_width="@dimen/button_width_48"-->
+    <!--            android:layout_height="@dimen/button_height_48"-->
+    <!--            android:layout_marginEnd="@dimen/margin_8"-->
+    <!--            android:background="?attr/selectableItemBackground"-->
+    <!--            android:contentDescription="@string/image_button_description"-->
+    <!--            android:src="@drawable/ic_search"-->
+    <!--            app:layout_constraintBottom_toBottomOf="@+id/text_title_discovery"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="@+id/text_title_discovery"-->
+    <!--            tools:ignore="SpeakableTextPresentCheck,RedundantDescriptionCheck,DuplicateSpeakableTextCheck" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/text_title_discovery"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="@dimen/margin_16"-->
+    <!--            android:layout_marginTop="@dimen/margin_8"-->
+    <!--            android:text="@string/title_discovery"-->
+    <!--            android:textAppearance="@style/TextAppearance.AppCompat.Display1"-->
+    <!--            android:textStyle="bold"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--        <androidx.fragment.app.FragmentContainerView-->
+    <!--            android:id="@+id/fcv_artist"-->
+    <!--            android:name="pro.branium.feature_artist.ui.fragment.ArtistFragment"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="@dimen/margin_8"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/text_title_discovery"-->
+    <!--            tools:layout="@layout/fragment_artist" />-->
+
+    <!--        <androidx.fragment.app.FragmentContainerView-->
+    <!--            android:id="@+id/fcv_most_heard"-->
+    <!--            android:name="pro.branium.feature_mostheard.ui.fragment.MostHeardFragment"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="@dimen/margin_32"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/fcv_artist"-->
+    <!--            tools:layout="@layout/fragment_most_heard" />-->
+
+    <!--        <androidx.fragment.app.FragmentContainerView-->
+    <!--            android:id="@+id/fcv_for_you"-->
+    <!--            android:name="pro.branium.feature_foryou.ui.fragment.ForYouFragment"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="@dimen/margin_32"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/fcv_most_heard"-->
+    <!--            tools:layout="@layout/fragment_for_you" />-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--</ScrollView>-->

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="message_no_playlist">Bạn không có danh sách nào</string>
+    <string name="action_create">Tạo mới</string>
+    <string name="title_playlist_detail">Chi tiết danh sách phát</string>
+    <string name="text_playlist_name_detail">Tên Playlist: %s</string>
+    <string name="text_number_of_songs">Số lượng bài hát: %d</string>
+    <string name="title_create_playlist">Tạo danh sách phát</string>
+
+</resources>

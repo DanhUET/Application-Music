@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_previous_song">Không còn bài hát nào trước bài hát hiện tại trong danh sách phát</string>
+    <string name="no_next_song">Không còn bài hát nào trong danh sách phát</string>
+    <string name="no_internet">Không có kết nối internet. Vui lòng kểm tra lại kết nối internet và thử lại.</string>
+</resources>

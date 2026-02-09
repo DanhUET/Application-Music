@@ -1,0 +1,67 @@
+<resources>
+
+    <style name="Theme.MusicApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_light_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="colorError">@color/md_theme_light_error</item>
+        <item name="colorOnError">@color/md_theme_light_onError</item>
+        <item name="colorErrorContainer">@color/md_theme_light_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/md_theme_light_onErrorContainer</item>
+        <item name="colorOnBackground">@color/md_theme_light_onBackground</item>
+        <item name="colorSurface">@color/md_theme_light_surface</item>
+        <item name="colorOnSurface">@color/md_theme_light_onSurface</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="Widget.Material3.Toolbar">
+        <item name="navigationIcon">@drawable/ic_arrow_back</item>
+        <item name="backgroundColor">?android:colorBackground</item>
+    </style>
+
+    <style name="MiniPlayerTheme">
+        <item name="android:background">@color/purple_100</item>
+    </style>
+
+    <style name="ButtonBackgroundTheme">
+        <item name="android:background">@drawable/interest_button_background</item>
+        <item name="android:backgroundTint">@color/purple_50</item>
+    </style>
+
+    <style name="DividerStyle">
+        <item name="android:background">@color/divider_color</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.Material3.SearchView">
+        <item name="android:searchIcon">@drawable/ic_search</item>
+        <item name="android:searchHintIcon">@drawable/ic_search</item>
+        <item name="android:closeIcon">@drawable/ic_close</item>
+        <item name="android:textColorHint">@color/text_hint_color</item>
+    </style>
+
+    <style name="SearchedKeyStyle">
+        <item name="android:background">@color/purple_50</item>
+    </style>
+
+    <style name="SecondaryTextStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/text_secondary_light</item>
+    </style>
+
+    <color name="partial_transparent">#80000000</color>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <!-- Nền trắng, không bo góc, không shadow -->
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/white</item>
+        <item name="shapeAppearanceOverlay">@style/NoCornerShape</item>
+    </style>
+
+    <style name="NoCornerShape" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+
+</resources>

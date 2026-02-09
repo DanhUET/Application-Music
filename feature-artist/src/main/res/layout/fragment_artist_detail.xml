@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="artist"
+            type="pro.branium.core_ui.model.DisplayArtistModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="pro.branium.discovery.ui.fragment.artist.ArtistDetailFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_artist_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ToolbarStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/text_title_artist_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/title_artist_detail"
+                android:textAppearance="@style/TextAppearance.Material3.ActionBar.Title" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/artist_detail_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?attr/selectableItemBackground"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_artist_detail"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/image_artist_detail_avatar"
+                android:layout_width="@dimen/avatar_width_154"
+                android:layout_height="@dimen/avatar_height_154"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_16"
+                android:contentDescription="@string/image_desc"
+                app:imageUrl="@{artist.artist.avatar}"
+                app:isCircleCrop="@{true}"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/text_detail_artist_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_64"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_64"
+                android:text="@{String.format(@string/text_artist_name, artist.artist.name)}"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
+
+            <TextView
+                android:id="@+id/text_detail_interested"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_64"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="@{String.format(@string/text_number_of_interest, artist.artist.interested)}"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+
+            <TextView
+                android:id="@+id/text_artist_detail_your_interest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_64"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="@{String.format(@string/text_your_interested, artist.careAbout)}"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+
+            <include
+                android:id="@+id/include_detail_artist_song_list"
+                layout="@layout/partial_song_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_artist_detail_your_interest" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/artist_detail_empty_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_artist_detail">
+
+            <include
+                android:id="@+id/include_empty_layout"
+                layout="@layout/layout_empty_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

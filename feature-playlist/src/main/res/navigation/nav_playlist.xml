@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_playlist"
+    app:startDestination="@id/fr_playlist_detail">
+
+    <fragment
+        android:id="@+id/fr_playlist_detail"
+        android:name="pro.branium.feature_playlist.ui.fragment.PlaylistDetailFragment"
+        android:label="fragment_playlist_detail"
+        tools:layout="@layout/fragment_playlist_detail" >
+        <argument
+            android:name="playlistId"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
+</navigation>

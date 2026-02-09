@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_library"
+    app:startDestination="@id/navigation_library">
+
+    <include app:graph="@navigation/nav_playlist" />
+
+    <fragment
+        android:id="@+id/navigation_library"
+        android:name="pro.branium.feature.library.ui.fragments.LibraryFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_library">
+        <action
+            android:id="@+id/action_fr_library_to_more_playlist"
+            app:destination="@id/fr_more_playlist"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@id/navigation_library" />
+        <action
+            android:id="@+id/action_fr_library_to_playlist_detail"
+            app:destination="@id/fr_playlist_detail"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@id/navigation_library" />
+        <action
+            android:id="@+id/action_fr_library_to_more_recent"
+            app:destination="@id/fr_more_recent"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/navigation_library" />
+        <action
+            android:id="@+id/action_fr_library_to_more_favorite"
+            app:destination="@id/fr_more_favorite"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@id/navigation_library" />
+    </fragment>
+    <fragment
+        android:id="@+id/fr_more_playlist"
+        android:name="pro.branium.feature_playlist.ui.fragment.MorePlaylistFragment"
+        android:label="fragment_more_playlist"
+        tools:layout="@layout/fragment_more_playlist">
+        <action
+            android:id="@+id/action_fr_more_playlist_to_playlist_detail"
+            app:destination="@id/fr_playlist_detail"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fr_more_recent"
+        android:name="pro.branium.feature_recent.ui.fragment.MoreRecentFragment"
+        android:label="fragment_more_recent"
+        tools:layout="@layout/fragment_more_recent" />
+    <fragment
+        android:id="@+id/fr_more_favorite"
+        android:name="pro.branium.feature_favorite.ui.fragment.MoreFavoriteFragment"
+        android:label="fragment_more_favorite"
+        tools:layout="@layout/fragment_more_favorite" />
+</navigation>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="horizontal">
+
+    <!-- Icon chính của hành động -->
+    <ImageView
+        android:id="@+id/image_item_menu_icon"
+        android:layout_width="@dimen/button_width_48"
+        android:layout_height="@dimen/button_height_48"
+        android:layout_marginStart="@dimen/margin_8"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/image_desc"
+        android:padding="@dimen/padding_8"
+        tools:ignore="ImageContrastCheck"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/text_item_menu_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:paddingStart="@dimen/padding_8"
+        android:paddingTop="@dimen/padding_8"
+        android:paddingEnd="@dimen/padding_16"
+        android:paddingBottom="@dimen/padding_8"
+        android:text="@string/title_home"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+
+    <!-- State icon -->
+    <ImageView
+        android:id="@+id/img_item_menu_state"
+        android:layout_width="@dimen/button_width_24"
+        android:layout_height="@dimen/button_height_24"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:contentDescription="@string/image_desc"
+        android:visibility="visible"
+        tools:src="@drawable/ic_check" />
+</LinearLayout>

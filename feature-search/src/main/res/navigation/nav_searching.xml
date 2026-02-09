@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_searching"
+    app:startDestination="@id/fr_searching">
+
+    <fragment
+        android:id="@+id/fr_searching"
+        android:name="pro.branium.feature.search.ui.fragments.SearchingFragment"
+        android:label="fragment_searching"
+        tools:layout="@layout/fragment_searching">
+        <argument
+            android:name="query"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+<!--        <action-->
+    <!--            android:id="@+id/action_global_fr_searching"-->
+    <!--            app:destination="@id/fr_searching"-->
+    <!--            app:enterAnim="@anim/slide_left"-->
+    <!--            app:exitAnim="@anim/fade_out"-->
+    <!--            app:popEnterAnim="@anim/fade_in"-->
+    <!--            app:popExitAnim="@anim/slide_right" />-->
+</navigation>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+    <include app:graph="@navigation/nav_home" />
+    <include app:graph="@navigation/nav_album" />
+    <include app:graph="@navigation/nav_library" />
+    <include app:graph="@navigation/nav_playlist" />
+    <include app:graph="@navigation/nav_discovery" />
+    <include app:graph="@navigation/nav_settings" />
+    <include app:graph="@navigation/nav_artist" />
+    <include app:graph="@navigation/nav_song_option_menu" />
+    <include app:graph="@navigation/nav_searching" />
+
+    <fragment
+        android:id="@+id/fr_searching"
+        android:name="pro.branium.feature.search.ui.fragments.SearchingFragment"
+        android:label="fragment_searching"
+        tools:layout="@layout/fragment_searching">
+        <argument
+            android:name="query"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_fr_playlist_detail"
+        app:destination="@+id/nav_playlist"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:popUpTo="@id/nav_playlist" />
+
+    <action
+        android:id="@+id/action_global_fr_album_detail"
+        app:destination="@+id/nav_album"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:popUpTo="@id/nav_album" />
+
+    <action
+        android:id="@+id/action_global_fr_searching"
+        app:destination="@id/fr_searching"
+        app:enterAnim="@anim/slide_left"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_right" />
+
+    <action
+        android:id="@+id/action_global_fr_artist_detail"
+        app:destination="@+id/nav_artist"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:popUpTo="@id/nav_artist"/>
+
+    <fragment
+        android:id="@+id/miniPlayerFragment"
+        android:name="pro.branium.feature.player.ui.fragment.MiniPlayerFragment"
+        android:label="MiniPlayerFragment" />
+
+    <dialog
+        android:id="@+id/nowPlayingFragment"
+        android:name="pro.branium.feature.player.ui.fragment.NowPlayingFragment"
+        android:label="NowPlayingFragment" />
+</navigation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <!-- Ignore false positive: PlaybackService extends MediaSessionService -->
+    <issue id="Instantiatable">
+        <ignore regexp="pro\.branium\.infrastructure\.media\.PlaybackService" />
+    </issue>
+</lint>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_previous_song">Previous song not available</string>
+    <string name="no_next_song">Next song not available</string>
+    <string name="no_internet">No internet connection. Please check your internet connection and try again.</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_album_available">No album available</string>
+    <string name="label_more_album_fragment">FragmentMoreAlbum</string>
+    <string name="label_album_detail_fragment">AlbumDetailsFragment</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_btn_create_playlist"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/btn_create_playlist"
+        android:layout_width="@dimen/width_48"
+        android:layout_height="@dimen/height_48"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginBottom="@dimen/margin_4"
+        android:contentDescription="@string/image_button_description"
+        app:srcCompat="@drawable/ic_add"
+        tools:ignore="RedundantDescriptionCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_48"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:gravity="center_vertical"
+        android:text="@string/label_create_playlist"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
+</LinearLayout>
